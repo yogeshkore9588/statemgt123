@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace statemgt123
 {
@@ -11,9 +6,13 @@ namespace statemgt123
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.QueryString.Count>0)
+            if (Session["count"] != null)
             {
-                Label2.Text="welcome "+Request.QueryString[0];
+                Label3.Text = Session["count"].ToString();
+            }
+            if (Request.QueryString.Count > 0)
+            {
+                Label2.Text = "welcome " + Request.QueryString[0];
             }
             else
             {
